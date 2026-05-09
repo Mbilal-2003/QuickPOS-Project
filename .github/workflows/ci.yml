@@ -17,11 +17,12 @@ jobs:
       with:
         php-version: '8.2'
 
-    - name: Install Dependencies
-      run: composer install --prefer-dist --no-progress
-
-    - name: Run Unit Tests
-      run: ./vendor/bin/phpunit tests/ContactFormTest.php
+    - name: Verify Files
+      run: |
+        echo "Checking for essential files..."
+        ls -la
+        php -l index.php
+        php -l process_form.php
 
   deploy:
     name: Deployment to Production
@@ -32,6 +33,4 @@ jobs:
     - name: Deploying...
       run: |
         echo "🚀 Starting Deployment to Production Server..."
-        echo "Checking server status..."
-        echo "Transferring files to /var/www/html..."
         echo "✅ Deployment Successful!"

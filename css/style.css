@@ -1,0 +1,79 @@
+/* css/style.css */
+:root {
+    --cream: #FAFAF7;
+    --white: #FFFFFF;
+    --ink: #1A1A1A;
+    --ink-soft: #5A5A5A;
+    --accent: #2563EB;
+    --border: #E8E8E4;
+    --success: #16A34A;
+    --success-light: #F0FDF4;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
+header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 5%; background: var(--white);
+    border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100;
+}
+.logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.logo-icon { width: 30px; height: 30px; background: var(--accent); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+.logo-icon svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 1.8; }
+.logo-text { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--ink); }
+
+nav ul { list-style: none; display: flex; gap: 2rem; }
+nav a { text-decoration: none; color: var(--ink-soft); font-weight: 500; }
+nav a:hover { color: var(--accent); }
+
+.btn {
+    background: var(--accent); color: #fff; padding: 10px 24px; border-radius: 8px;
+    text-decoration: none; font-weight: 500; border: none; cursor: pointer; display: inline-block;
+}
+.btn:hover { background: #1D4ED8; }
+
+/* Hero */
+.hero { text-align: center; padding: 6rem 1rem; max-width: 800px; margin: 0 auto; }
+.hero h1 { font-family: 'DM Serif Display', serif; font-size: 3.5rem; margin-bottom: 1rem; line-height: 1.1; }
+.hero p { font-size: 1.2rem; color: var(--ink-soft); margin-bottom: 2rem; }
+
+/* Features */
+.features { padding: 5rem 5%; background: var(--white); }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+.feature-card { padding: 2rem; border: 1px solid var(--border); border-radius: 16px; background: var(--cream); }
+.feature-card svg { width: 40px; height: 40px; stroke: var(--accent); fill: none; margin-bottom: 1rem; }
+.feature-card h3 { margin-bottom: 0.5rem; font-family: 'DM Serif Display', serif; }
+
+/* Pricing */
+.pricing { padding: 5rem 5%; text-align: center; }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 2rem auto 0; }
+.price-card { background: var(--white); border: 1px solid var(--border); border-radius: 24px; padding: 3rem 2rem; }
+.price-card.pro { border-color: var(--accent); box-shadow: 0 12px 40px rgba(37,99,235,0.1); }
+.price-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin-bottom: 1rem; }
+.price-card .amount { font-size: 3rem; font-weight: 600; color: var(--ink); margin-bottom: 1.5rem; }
+
+/* Contact Form */
+.contact { padding: 5rem 5%; background: var(--white); display: flex; justify-content: center; }
+.contact-card { background: var(--cream); border: 1px solid var(--border); border-radius: 24px; padding: 3rem; max-width: 500px; width: 100%; }
+.contact-card h2 { font-family: 'DM Serif Display', serif; font-size: 2rem; margin-bottom: 1rem; text-align: center; }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.9rem; }
+.form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 1rem; }
+.form-group textarea { resize: vertical; min-height: 120px; }
+.error-msg { color: #DC2626; font-size: 0.85rem; margin-top: 0.25rem; display: block; }
+.btn-submit { width: 100%; font-size: 1.1rem; padding: 14px; }
+
+/* Footer */
+footer { padding: 3rem 5%; background: var(--ink); color: var(--cream); text-align: center; }
+.social-links { margin-bottom: 1rem; display: flex; justify-content: center; gap: 1rem; }
+.social-links a { color: var(--cream); text-decoration: none; opacity: 0.8; }
+.social-links a:hover { opacity: 1; }

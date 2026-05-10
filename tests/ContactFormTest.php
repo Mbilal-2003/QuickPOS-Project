@@ -37,7 +37,7 @@ class ContactFormTest extends TestCase
     public function testValidSubmissionSucceeds(): void {
         $result = $this->processForm(['name' => 'Amna', 'email' => 'amna@gmail.com', 'message' => 'Hello']);
         $this->assertEmpty($result['errors']);
-         $this->assertFalse($result['success']);    }
+         $this->assertTrue($result['success']);    }
 
     public function testWhitespaceOnlyFieldsAreRejected(): void {
         $result = $this->processForm(['name' => '   ', 'email' => '   ', 'message' => '   ']);
